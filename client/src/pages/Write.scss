@@ -1,0 +1,84 @@
+$color: #af9cb3;
+
+.addpost {
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  gap: 20px;
+
+  .content {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+      padding: 10px;
+      border: 1px solid lightgray;
+    }
+
+    .editorContainer {
+      height: 500px;
+      overflow: scroll;
+      border: 1px solid lightgray;
+
+      .editor {
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
+  .menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .item {
+      border: 1px solid $color;
+      padding: 10px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 12px;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .file {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        :first-child {
+          cursor: pointer;
+          color: $color;
+          background-color: white;
+          border: 1px solid $color;
+          padding: 3px 5px;
+        }
+        :last-child {
+          cursor: pointer;
+          color: white;
+          background-color: $color;
+          border: 1px solid $color;
+          padding: 3px 5px;
+        }
+      }
+
+      .cat {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+    }
+  }
+}

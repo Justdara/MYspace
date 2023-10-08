@@ -1,0 +1,25 @@
+$color: #af9cb3;
+
+footer {
+  margin-top: 100px;
+  padding: 10px;
+  background-color: $color;
+  display: flex;
+  align-items: center;
+  font-family: "Bricolage Grotesque", sans-serif;
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 30px;
+  }
+  h1 {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  span {
+    margin-left: 400px;
+    font-size: 15px;
+  }
+}
