@@ -20,15 +20,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:8800/api/auth/register",
-        inputs
-      );
-      // navigate("/login");
-      console.log(res);
+      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      navigate("/login");
     } catch (err) {
-      // setError(err.response.data);
-      console.log(err);
+      setError(err.response.data);
     }
   };
   return (

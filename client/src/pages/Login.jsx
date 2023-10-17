@@ -22,7 +22,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(inputs);
+      await axios.post("http://localhost:8800/api/auth/login", inputs);
       navigate("/");
     } catch (err) {
       setError(err.response.data);
@@ -30,8 +30,8 @@ const Login = () => {
   };
   return (
     <div className="auth">
-      <h1>LOGIN TO MYSPACE</h1>
       <form>
+        <h1>LOGIN TO MYSPACE</h1>
         <input
           required
           type="text"
