@@ -1,7 +1,11 @@
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
+import { AuthContext } from "../context/authContext";
 
 export default function NavBar() {
+  const { currentUser, logout } = useContext(AuthContext);
+
   return (
     <div className="nav">
       <div className="nav-left">
@@ -31,8 +35,14 @@ export default function NavBar() {
         <Link className="link" to="/?cat=art">
           <h4>Art</h4>
         </Link>
-        <span>Username </span>
-        <span>Logout </span>
+        <span>{currentUser?.username}</span>
+        {currentUser ? (
+          <span onClick={logout}>Logout</span>
+        ) : (
+          <Link className="link" to="/login">
+            Login
+          </Link>
+        )}
         <span className="write">
           <Link className="link" to="/write">
             Write
